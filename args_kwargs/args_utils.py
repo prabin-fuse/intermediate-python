@@ -50,4 +50,17 @@ def calculate_total_cost(**kwargs_purchased):
 
 
 def create_student_report(s_name, s_age, **kwargs_sub_marks):
-    pass
+    return {"Student Name": s_name, "Age": s_age, "Subjects": kwargs_sub_marks}
+
+
+
+#### main:
+# Testint the above functions:
+print("Sum of numbers 7, 8 ,10, 4 using *args is : ", sum_args(7, 8 ,10, 4))
+print("Sum of numbers (77, 18 ,7, 14) using *args is : ", sum_args(77, 18 ,7, 14))
+
+print("Concated String is : ",concat_strings("My", "name", "is","Prabin") )
+print("Concated String is : ",concat_strings("My", "name", "is","Prabin", "Bohara") )
+print("The toal cost is : ", calculate_total_cost(CPU= 3200, Mouse = 900, SSD= 4500))
+print("Student Report")
+print(create_student_report("Prabin", 24, Maths = 95, Computer= 80, Science = 85))
