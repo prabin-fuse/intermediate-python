@@ -1,0 +1,15 @@
+## *args and **kwargs lets to pass variable length arguments:
+
+# *<varaiable_name> => this unpacks the variables that are non-keyworded
+# **<varaiable_name> => this unpacks the variables that are keyworded in the form of key-vaue pair
+
+# order to pass in function: (fargs, *args, **kwargs)
+
+## usage: (where?)
+- Function definition
+- Funcation calling
+
+## When to use:
+examples:
+- function decorators
+- Monkey patching

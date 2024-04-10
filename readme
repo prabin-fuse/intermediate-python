@@ -1,0 +1,8 @@
+#The objective of this course is to:
+
+- Understand and use *args and **kwargs to handle variable-length argument lists in functions
+- Create and utilize generators to efficiently produce and manage large datasets or infinite sequences of data
+- Apply Map, Filter, and Reduce functions to manipulate data in Python and make code concise and expressive
+- Implement Decorators to modify the behavior of functions or methods without changing their source code
+- Utilize collections (such as namedtuple, deque, defaultdict, Counter, etc.) to efficiently handle and manipulate data structures.
+- Understand the difference between iterations and comprehensions. Use list, dictionary and set comprehensions. Understand the impact on execution time
