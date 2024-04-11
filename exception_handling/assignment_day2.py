@@ -37,6 +37,33 @@ def division_both_error(num1, num2):
         print("The given value is not interger or float")
 
 
+class InvalidAgeError(Exception):
+    pass
+
+class WeakPassowrdError(Exception):
+    pass
+
+def check_user_age():
+    age = int(input("Please input your age : "))
+    try:
+        if age < 0 or age > 120:
+            raise InvalidAgeError()
+        else: 
+            print("Your age is valid")
+    except InvalidAgeError as e:
+        print("InvalidAge Error!  Your age must be between 0 and 120.")
+
+def check_password():
+    password = input("Please provide your password : ")
+    try:
+        if len(password) < 8:
+            raise WeakPassowrdError("WeakPasswordErrorr! Your password is weak. i..e less than 8 characters.")
+        else:
+            print("Valid password!")
+    except WeakPassowrdError as e:
+        print("Error : ", e)
+
+
 
 ### testing functions:
 def testing_functions():
@@ -44,6 +71,8 @@ def testing_functions():
     print("2) Filename and read content")
     print("3) Integer conversion")
     print("4) Division => ZeroDivisionError and Value Error")
+    print("5) Age validation check")
+    print("6) Password strength test")
 
     option = int(input("\nChoose the options : "))
     #print(option)
@@ -61,6 +90,14 @@ def testing_functions():
         num1 = int(input("Enter the dividend : "))
         num2 = int(input("Enter the divisor : "))
         division_both_error(num1, num2)
+    elif option == 5:
+        check_user_age()
+    elif option == 6:
+        check_password()
+    else:
+        print("Invaliid optionss")
+
+
 
 
 ### main
