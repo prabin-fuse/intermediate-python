@@ -24,7 +24,7 @@ def convert_to_int(str):
     try:
         print(f"Converted to integer : {int(str)}")
     except ValueError:
-        print("The given input cannot be converted into integer")
+        print("The given input cannot be converted into integer. Please give integer compatible string.")
     
 
 def division_both_error(num1, num2):
@@ -45,19 +45,21 @@ def testing_functions():
     print("3) Integer conversion")
     print("4) Division => ZeroDivisionError and Value Error")
 
-    option = input("Choose the options")
+    option = int(input("\nChoose the options : "))
+    #print(option)
 
     if option == 1:
-        num1 = input("Enter the dividend")
-        num2 = input("Enter the divisor")
+        num1 = int(input("Enter the dividend : "))
+        num2 = int(input("Enter the divisor : "))
         division(num1, num2)
     elif option == 2:
         user_file()
     elif option == 3:
-        convert_to_int()
+        string = input("Enter the string to type cast in integer : ")
+        convert_to_int(string)
     elif option == 4:
-        num1 = input("Enter the dividend")
-        num2 = input("Enter the divisor")
+        num1 = int(input("Enter the dividend : "))
+        num2 = int(input("Enter the divisor : "))
         division_both_error(num1, num2)
 
 
