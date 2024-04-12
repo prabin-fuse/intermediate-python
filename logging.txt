@@ -1,0 +1,7 @@
+levels of logging:
+
+- logging.debug()
+- loggin.info()
+- logging.warning() => default
+- logging.error()
+- logging.critical()

@@ -1,11 +1,26 @@
 ### Exception Handling Assignment day2:
+import logging
+
+logging.basicConfig(level=logging.DEBUG, filename="exception_logs.log",
+                    format="%(asctime)s:%(levelname)s:%(message)s")
+
+
+class InvalidAgeError(Exception):
+    pass
+
+class WeakPassowrdError(Exception):
+    pass
+
+
+##########functions:
 def division(num1, num2):
 
     try:
         ans = num1/num2
         print(f"The answer of dividing {num1} by {num2} is : {ans} ")
+        logging.info(f"The answer of dividing {num1} by {num2} is : {ans} ")
     except ZeroDivisionError as e:
-        print("Error! Divisor is zero. Please change it or handle it.")
+        logging.warning("Error! Divisor is zero. Please change it or handle it.")
     
 
 def user_file():
@@ -16,32 +31,28 @@ def user_file():
         content = file.read()
         print(content)
     except FileNotFoundError:
-        print("The required file is not found")
+        logging.error("The required file is not found")
 
 
 def convert_to_int(str):
     print(f"Original Input : {str}")
     try:
         print(f"Converted to integer : {int(str)}")
+        logging.info(f"Converted to integer : {int(str)}")
     except ValueError:
-        print("The given input cannot be converted into integer. Please give integer compatible string.")
+        logging.error("The given input cannot be converted into integer. Please give integer compatible string.")
     
 
 def division_both_error(num1, num2):
     try:
         ans = num1/num2
         print(f"The answer of dividing {num1} by {num2} is : {ans} ")
+        logging.info(f"The answer of dividing {num1} by {num2} is : {ans} ")
     except ZeroDivisionError as e:
-        print("Error! Divisor is zero. Please change it or handle it.")
+        logging.error("Error! Divisor is zero. Please change it or handle it.")
     except ValueError:
-        print("The given value is not interger or float")
+        logging.error("The given value is not interger or float")
 
-
-class InvalidAgeError(Exception):
-    pass
-
-class WeakPassowrdError(Exception):
-    pass
 
 def check_user_age():
     age = int(input("Please input your age : "))
@@ -50,8 +61,9 @@ def check_user_age():
             raise InvalidAgeError()
         else: 
             print("Your age is valid")
+            logging.info("Your age is valid")
     except InvalidAgeError as e:
-        print("InvalidAge Error!  Your age must be between 0 and 120.")
+        logging.error("InvalidAge Error!  Your age must be between 0 and 120.")
 
 def check_password():
     password = input("Please provide your password : ")
@@ -60,8 +72,9 @@ def check_password():
             raise WeakPassowrdError("WeakPasswordErrorr! Your password is weak. i..e less than 8 characters.")
         else:
             print("Valid password!")
+            logging.info("Valid password!")
     except WeakPassowrdError as e:
-        print("Error : ", e)
+        logging.error(f"Error :  {e}")
 
 
 
