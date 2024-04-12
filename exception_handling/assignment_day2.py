@@ -17,7 +17,7 @@ def division(num1, num2):
 
     try:
         ans = num1/num2
-        print(f"The answer of dividing {num1} by {num2} is : {ans} ")
+        #print(f"The answer of dividing {num1} by {num2} is : {ans} ")
         logging.info(f"The answer of dividing {num1} by {num2} is : {ans} ")
     except ZeroDivisionError as e:
         logging.warning("Error! Divisor is zero. Please change it or handle it.")
@@ -26,10 +26,10 @@ def division(num1, num2):
 def user_file():
     try:    
         file_name = input("\n\nPlease give the file name you want to access : ")
-        print(f"\nReading from {file_name} :" )
+        logging.info(f"\nReading from {file_name} :" )
         file = open(file_name)
         content = file.read()
-        print(content)
+        logging.info(content)
     except FileNotFoundError:
         logging.error("The required file is not found")
 
@@ -37,7 +37,7 @@ def user_file():
 def convert_to_int(str):
     print(f"Original Input : {str}")
     try:
-        print(f"Converted to integer : {int(str)}")
+        #print(f"Converted to integer : {int(str)}")
         logging.info(f"Converted to integer : {int(str)}")
     except ValueError:
         logging.error("The given input cannot be converted into integer. Please give integer compatible string.")
@@ -46,7 +46,7 @@ def convert_to_int(str):
 def division_both_error(num1, num2):
     try:
         ans = num1/num2
-        print(f"The answer of dividing {num1} by {num2} is : {ans} ")
+        #print(f"The answer of dividing {num1} by {num2} is : {ans} ")
         logging.info(f"The answer of dividing {num1} by {num2} is : {ans} ")
     except ZeroDivisionError as e:
         logging.error("Error! Divisor is zero. Please change it or handle it.")
@@ -60,7 +60,7 @@ def check_user_age():
         if age < 0 or age > 120:
             raise InvalidAgeError()
         else: 
-            print("Your age is valid")
+            #print("Your age is valid")
             logging.info("Your age is valid")
     except InvalidAgeError as e:
         logging.error("InvalidAge Error!  Your age must be between 0 and 120.")
@@ -71,7 +71,7 @@ def check_password():
         if len(password) < 8:
             raise WeakPassowrdError("WeakPasswordErrorr! Your password is weak. i..e less than 8 characters.")
         else:
-            print("Valid password!")
+            #print("Valid password!")
             logging.info("Valid password!")
     except WeakPassowrdError as e:
         logging.error(f"Error :  {e}")
